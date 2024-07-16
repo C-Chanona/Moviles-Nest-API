@@ -31,7 +31,8 @@ __decorate([
     __metadata("design:type", String)
 ], CreateUserDto.prototype, "password", void 0);
 __decorate([
-    (0, class_validator_1.IsInt)(),
-    __metadata("design:type", Number)
-], CreateUserDto.prototype, "age", void 0);
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.MaxLength)(10),
+    __metadata("design:type", String)
+], CreateUserDto.prototype, "phone", void 0);
 //# sourceMappingURL=create_user.dto.js.map
