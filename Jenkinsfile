@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/C-Chanona/Palindrome-JAVA.git', branch: 'main'
+                git url: 'https://github.com/C-Chanona/Moviles-Nest-API.git', branch: 'main'
             }
         }
 
