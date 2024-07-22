@@ -6,6 +6,7 @@ export declare class TaskService {
     constructor(taskRepository: Repository<Task>);
     allTasks(): Promise<Task[]>;
     getTaskById(id: number): Promise<Task>;
+    getTasksDone(): Promise<Task[]>;
     createTask(task: CreateTaskDto): Promise<Task>;
     deleteTask(id: number): Promise<string>;
 }

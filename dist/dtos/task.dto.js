@@ -31,9 +31,8 @@ __decorate([
     __metadata("design:type", String)
 ], CreateTaskDto.prototype, "schedule", void 0);
 __decorate([
-    (0, class_validator_1.IsInt)(),
-    (0, class_validator_1.Min)(0),
-    (0, class_validator_1.Max)(1),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsBoolean)(),
     __metadata("design:type", Boolean)
 ], CreateTaskDto.prototype, "done", void 0);
 //# sourceMappingURL=task.dto.js.map

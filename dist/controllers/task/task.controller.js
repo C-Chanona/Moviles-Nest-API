@@ -23,6 +23,9 @@ let TaskController = class TaskController {
     async getAllTasks() {
         return this.taskService.allTasks();
     }
+    async getTasksDone() {
+        return this.taskService.getTasksDone();
+    }
     async getTaskById(id_task) {
         return this.taskService.getTaskById(id_task);
     }
@@ -40,6 +43,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], TaskController.prototype, "getAllTasks", null);
+__decorate([
+    (0, common_1.Get)('dones'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], TaskController.prototype, "getTasksDone", null);
 __decorate([
     (0, common_1.Get)(':id_task'),
     __param(0, (0, common_1.Param)('id_task', common_1.ParseIntPipe)),

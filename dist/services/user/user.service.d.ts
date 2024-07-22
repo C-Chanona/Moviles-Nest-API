@@ -5,7 +5,7 @@ import { UpdateUserDto } from 'src/dtos/update_user.dto';
 export declare class UserService {
     private readonly userRepository;
     constructor(userRepository: Repository<User>);
-    findById(id: number): Promise<User>;
+    findUser(email: string, password: string): Promise<User>;
     createUser(user: CreateUserDto): Promise<User>;
     updateUser(id: number, updateUser: UpdateUserDto): Promise<User>;
 }

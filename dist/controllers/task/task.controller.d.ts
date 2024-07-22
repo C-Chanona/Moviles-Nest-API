@@ -5,6 +5,7 @@ export declare class TaskController {
     private readonly taskService;
     constructor(taskService: TaskService);
     getAllTasks(): Promise<Task[]>;
+    getTasksDone(): Promise<Task[]>;
     getTaskById(id_task: number): Promise<Task>;
     createTask(task: CreateTaskDto): Promise<Task>;
     deleteTask(id_task: number): Promise<string>;

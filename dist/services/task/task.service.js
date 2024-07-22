@@ -29,6 +29,13 @@ let TaskService = class TaskService {
         }
         return task;
     }
+    async getTasksDone() {
+        const tasks = this.taskRepository.find({ where: { done: true } });
+        if (!tasks) {
+            throw new common_1.NotFoundException('No tasks done');
+        }
+        return tasks;
+    }
     async createTask(task) {
         const newTask = this.taskRepository.create(task);
         return this.taskRepository.save(newTask);

@@ -1,10 +1,6 @@
 pipeline {
     agent any
-
-    environment {
-        NODE_HOME = tool name: 'NodeJS 14', type: 'NodeJSInstallation' // Ajusta el nombre según tu configuración de Jenkins
-        PATH = "${env.NODE_HOME}/bin:${env.PATH}"
-    }
+    tools {nodejs "Node"}
 
     stages {
         stage('Checkout') {
@@ -15,13 +11,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'node dist/main.js &'
+                bat 'start /B node dist\\main.js'
             }
         }
 
@@ -29,7 +25,7 @@ pipeline {
             steps {
                 script {
                     sleep 5 // Espera a que el servidor se inicie
-                    sh 'curl -v http://100.29.86.145:3000/user/1'
+                    bat 'curl -v http://100.29.86.145:3000/user/1'
                 }
             }
         }

@@ -19,10 +19,13 @@ let UserService = class UserService {
     constructor(userRepository) {
         this.userRepository = userRepository;
     }
-    async findById(id) {
-        const user = await this.userRepository.findOneBy({ id_user: id });
+    async findUser(email, password) {
+        const user = await this.userRepository.findOneBy({ email });
         if (!user) {
-            throw new common_1.NotFoundException(`User with ID ${id} not found`);
+            throw new common_1.NotFoundException(`User with not found`);
+        }
+        if (user.password !== password) {
+            throw new common_1.NotFoundException(`Invalid password`);
         }
         return user;
     }

@@ -21,8 +21,8 @@ let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
     }
-    async getUserById(id_user) {
-        return this.userService.findById(id_user);
+    async login(email, password) {
+        return this.userService.findUser(email, password);
     }
     async newUser(user) {
         return this.userService.createUser(user);
@@ -33,12 +33,13 @@ let UserController = class UserController {
 };
 exports.UserController = UserController;
 __decorate([
-    (0, common_1.Get)(':id_user'),
-    __param(0, (0, common_1.Param)('id_user', common_1.ParseIntPipe)),
+    (0, common_1.Post)('login'),
+    __param(0, (0, common_1.Body)('email')),
+    __param(1, (0, common_1.Body)('password')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Promise)
-], UserController.prototype, "getUserById", null);
+], UserController.prototype, "login", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
