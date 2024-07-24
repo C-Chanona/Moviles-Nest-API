@@ -4,7 +4,7 @@ import { CreateTaskDto } from 'src/dtos/task.dto';
 export declare class TaskService {
     private readonly taskRepository;
     constructor(taskRepository: Repository<Task>);
-    allTasks(): Promise<Task[]>;
+    allTasks(): Promise<any>;
     getTaskById(id: number): Promise<Task>;
     getTasksDone(): Promise<Task[]>;
     createTask(task: CreateTaskDto): Promise<Task>;
